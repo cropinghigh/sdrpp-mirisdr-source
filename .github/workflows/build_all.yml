@@ -25,7 +25,7 @@ jobs:
         - name: Install dependencies
           run: 'sudo apt-get update && sudo apt-get install libfftw3-dev libglfw3-dev libvolk2-dev libzstd-dev libusb-1.0-0-dev'
         - name: Install libmirisdr
-          run: 'git clone https://github.com/f4exb/libmirisdr-4 && cd libmirisdr-4 && mkdir build && cd build && cmake .. && make -j4 && sudo make install'
+          run: 'git clone https://github.com/f4exb/libmirisdr-4 && cd libmirisdr-4 && mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX=/usr && make -j4 && sudo make install'
         - name: Cmake
           run: 'mkdir build && cd build && ls -lah .. && cmake .. -DSDRPP_CORE_ROOT="$GITHUB_WORKSPACE/sdrpp_lib/SDRPlusPlus-master/core" -DSDRPP_LIB_ROOT="$GITHUB_WORKSPACE/sdrpp_lib/usr/lib" -DSDRPP_MODULE_CMAKE="$GITHUB_WORKSPACE/sdrpp_module_hack.cmake"'
         - name: Make
