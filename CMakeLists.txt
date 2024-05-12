@@ -14,4 +14,4 @@ endif ()
 
 include(${SDRPP_MODULE_CMAKE})
 
-target_link_libraries(mirisdr_source PRIVATE sdrpp_core mirisdr)
+target_link_libraries(mirisdr_source PRIVATE mirisdr)
